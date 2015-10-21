@@ -220,15 +220,18 @@ function deselectIcon(icon){
 $('#saveSubmit').click(function(){saveSubmit();});
 
 function saveSubmit(){
+      // removes any selection styling
+      $('.selected').removeClass('selected');
 
-  $('.selected').removeClass('selected');
-
-  html2canvas($('#main-canvas')).then(function(canvas) {
+      // Creates a canvas screenshot
+      html2canvas($('#main-canvas')).then(function(canvas) {
       finalCanvas = canvas;
-      finalImage = finalCanvas.toDataURL("image/png");
-      var ajax = new XMLHttpRequest();
 
-      // saves image into submitted-images folder
+      // Turns the canvas into a base64 png
+      finalImage = finalCanvas.toDataURL("image/png");
+
+      // saves image into submitted-images folder using testSave.php
+      var ajax = new XMLHttpRequest();
       ajax.open("POST",'testSave.php',true);
       ajax.setRequestHeader('Content-Type', 'canvas/upload');
       ajax.send(finalImage);
@@ -236,9 +239,7 @@ function saveSubmit(){
       ajax.onreadystatechange=function(){
       		if (ajax.readyState == 4)
       		{
-      			//execute any code placed here once ajax save is complete
-
-            // Needs: link to new image so we can use it to send an email with the image link
+      			// execute any code placed here once ajax save is complete
           }
   	}
 
