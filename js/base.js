@@ -227,6 +227,8 @@ function saveSubmit(){
       finalCanvas = canvas;
       finalImage = finalCanvas.toDataURL("image/png");
       var ajax = new XMLHttpRequest();
+
+      // saves image into submitted-images folder
       ajax.open("POST",'testSave.php',true);
       ajax.setRequestHeader('Content-Type', 'canvas/upload');
       ajax.send(finalImage);
@@ -234,16 +236,11 @@ function saveSubmit(){
       ajax.onreadystatechange=function(){
       		if (ajax.readyState == 4)
       		{
-      			//alert(ajax.responseText);
-      			// Write out the filename.
-          			//document.getElementById("debugFilenameConsole").innerHTML="Saved as<br><a target='_blank' href='"+ajax.responseText+"'>"+ajax.responseText+"</a><br>Reload this page to generate new image or click the filename to open the image file.";
-                console.log('saved');
+      			//execute any code placed here once ajax save is complete
+
+            // Needs: link to new image so we can use it to send an email with the image link
           }
   	}
-
-
-      // finalImage = '<img src="' + img + '"/>';
-      //  $('#finalImage').append(finalImage);
 
 
 });
