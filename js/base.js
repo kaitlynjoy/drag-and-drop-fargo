@@ -17,6 +17,7 @@ var dropdown  = $('#icon-select');
 var iconContainer = $('#icon-container');
 var selectedOptions = $('#selectedOptions');
 var zIndex = 1;
+var finalCanvas;
 var finalImage;
 
 /* Set Dropdown Initially */
@@ -45,7 +46,7 @@ function displayIcons(){
     iconContainer.append("<img src='img/" + iconArray[i][0] + "' title='" + iconArray[i][1] + "' />");
   }
   addSidebarInteraction();
-  // Tipped.create('#sidebar img');
+  //Tipped.create('#sidebar img');
 }
 
 
@@ -216,16 +217,35 @@ function deselectIcon(icon){
 
 /* ------------- Save & Submit ------------- */
 
-$('#saveSubmit').click(function(){saveSubmit();})
+$('#saveSubmit').click(function(){saveSubmit();});
 
 function saveSubmit(){
 
-  $('.selected').removeClass('.selected');
+  $('.selected').removeClass('selected');
 
   html2canvas($('#main-canvas')).then(function(canvas) {
-      var img = canvas.toDataURL("image/png");
-      finalImage = '<img src="' + img + '"/>';
-      $('#finalImage').append(finalImage);
-    });
+      finalCanvas = canvas;
+      finalImage = finalCanvas.toDataURL("image/png");
+      var ajax = new XMLHttpRequest();
+      ajax.open("POST",'testSave.php',true);
+      ajax.setRequestHeader('Content-Type', 'canvas/upload');
+      ajax.send(finalImage);
+
+      ajax.onreadystatechange=function(){
+      		if (ajax.readyState == 4)
+      		{
+      			//alert(ajax.responseText);
+      			// Write out the filename.
+          			//document.getElementById("debugFilenameConsole").innerHTML="Saved as<br><a target='_blank' href='"+ajax.responseText+"'>"+ajax.responseText+"</a><br>Reload this page to generate new image or click the filename to open the image file.";
+                console.log('saved');
+          }
+  	}
+
+
+      // finalImage = '<img src="' + img + '"/>';
+      //  $('#finalImage').append(finalImage);
+
+
+});
 
 }
