@@ -1,11 +1,13 @@
 /* ---------- Icon Panel Dropdown ------------ */
 
 /* Declare 3D Array for Icon Sets ['filename', 'Title'] */
+// Line Break in title: \n
+
 var choose = [['choose-arrow.png', 'Choose a Category']];
-var trees = [['trees-american-linden.png', 'American Linden'], ['trees-cottonwood.png', 'Cottonwood'], ['trees-golden-willow.png', 'Golden Willow'], ['trees-maple.png', 'Maple'], ['trees-paper-birch.png', 'Paper Birch'], ['trees-pine.png', 'Pine']];
-var flowers = [['flowers-blue-eyed-grass.png', 'Blue Eyed Grass'], ['flowers-hyssop.png', 'Hyssop'], ['flowers-marsh-marigold.png', 'Marsh Marigold'], ['flowers-milkweed.png', 'Milkweed'], ['flowers-prairie-violet.png', 'Prairie Violet'], ['flowers-wild-prairie-rose.png', 'Wild Prairie Rose']];
-var bushes = [['bushes-arborvitae.png', 'Arborvitae'], ['bushes-buckthorn.png', 'Buckthorn'], ['bushes-burning-bush.png', 'Burning Bush'], ['bushes-dogwood.png', 'Dogwood'], ['bushes-flame-amur-maple.png', 'Flame Amur Maple'], ['bushes-suffruticosa.png', 'Suffruticosa']];
-var grasses = [['grasses-big-bluestem.png', 'Big Bluestem'], ['grasses-cattail.png', 'Cattail'], ['grasses-fox-sedge.png', 'Fox Sedge'], ['grasses-horsetail.png', 'Horsetail'], ['grasses-indian-grass.png', 'Indian Grass'], ['grasses-little-bluegrass.png', 'Little Bluegrass']];
+var trees = [['trees-american-linden.png', 'American Linden\n\nGreat Shade\nFlowers make best-in-the-world honey'], ['trees-cottonwood.png', 'Cottonwood\n\nWildlife Den Sites\nGreat for bird nests'], ['trees-golden-willow.png', 'Golden Willow\n\nAttractive and Functional Shade\nDense Animal Cover'], ['trees-maple.png', 'Silver Maple\n\nUsed by deer and rabbits\nGood Wind Protection'], ['trees-paper-birch.png', 'Paper Birch\n\nUsed as food for 30 types of animals'], ['trees-pine.png', 'Pine\n\nValued for ornamental landscaping\nNesting for Morning Doves']];
+var flowers = [['flowers-blue-eyed-grass.png', 'Blue Eyed Grass\n\nPart of the iris family\nBlooms late spring to early summer'], ['flowers-hyssop.png', 'Giant Hyssop\n\nProvides nectar to pollinators\nMember of the mint family'], ['flowers-marsh-marigold.png', 'Marsh Marigold\n\nProvides habitat for phytoplankton\nNectar source for butterflies'], ['flowers-milkweed.png', 'Butterfly Milkweed\n\nAttracts monarch butterflies and humingbirds\nNative Americans used milkweed to make cloth'], ['flowers-prairie-violet.png', 'Prairie Violet\n\nAttracts bees and other beneficial insects\nNo noticeable floral scent'], ['flowers-wild-prairie-rose.png', 'Wild Prairie Rose\n\nWere used for medicine and food by native americans\nThe petals and rose hips are full of nutrients']];
+var bushes = [['bushes-arborvitae.png', 'Arborvitae\n\nGood for cover, nesting and food for animals\nPrefers moist soils'], ['bushes-buckthorn.png', 'Buckthorn\n\nVery attractive silvery-green foliage\nOrange fruit persists throughout winter'], ['bushes-burning-bush.png', 'Burning Bush\n\nScientific name is Latin for "winged"'], ['bushes-dogwood.png', 'Dogwood\n\nStabilizes soil\nAbsorbs large quantities of water'], ['bushes-flame-amur-maple.png', 'Flame Amur Maple\n\nSeeds eaten by squirrels\nNative maples used for sugary sap'], ['bushes-suffruticosa.png', 'Suffruticosa\n\nBelongs to the peony family\nWoody stems allow the plant to survive the winter']];
+var grasses = [['grasses-big-bluestem.png', 'Big Bluestem\n\nFilters water contaminants\nHigh quality forage for wildlife'], ['grasses-cattail.png', 'Cattail\n\nUsed for food/medicines by Native Americans\nHelps maintain marsh habitats'], ['grasses-fox-sedge.png', 'Fox Sedge\n\nFilters water contaminants\nSpreads out rapidly'], ['grasses-horsetail.png', 'Horsetail\n\nFilters contaminants in water\nProvides habitat for aquatic animals'], ['grasses-indian-grass.png', 'Indiangrass\n\nBlooms in late spring\nRegrows quickly after wildfires'], ['grasses-little-bluegrass.png', 'Little Bluegrass\n\nHardy plant that likes hills, ridges, and slopes\nVery resistant to droughts']];
 var waterSand = [['watersand-lake.png', 'Lake'], ['watersand-sand.png', 'Sand'], ['watersand-sandbar.png', 'Sandbar'], ['watersand-sandpit.png', 'Sand Pit'], ['watersand-small-lake.png', 'Small Lake'], ['watersand-small-river.png', 'Small River'], ['watersand-wide-river.png', 'Wide River'], ['watersand-lake-with-island.png', 'Lake and Island']];
 var furniture = [['furniture-bridge.png', 'Bridge'], ['furniture-flat-bench.png', 'Flat Bench'], ['furniture-picnic-table.png', 'Picnic Table'], ['furniture-stone-bench.png', 'Stone Bench'], ['furniture-table.png', 'Table'], ['furniture-wood-bench.png', 'Wood Bench']];
 var walkways = [['walkways-flat-stone-piece.png', 'Flat Stone Piece'], ['walkways-scattered-stone-path.png', 'Scattered Stone Path'], ['walkways-stone-steps.png', 'Stone Steps'], ['walkways-stone-walkway.png', 'Stone Walkway'], ['walkways-wood-steps.png', 'Wood Steps'], ['walkways-wood-walkway.png', 'Wood Walkway']];
@@ -74,12 +76,13 @@ function addFinalIcon(event){
   $('#main-canvas .selected').removeClass('selected');
   $(clonedIcon).addClass('selected');
   selectedOptions.css({'display': 'block'});
-
+  $(clonedIcon).attr('title', '');
   $('#main-canvas').append(clonedIcon);
   addModifyability($(clonedIcon));
 
   $(event.target).remove();
   addInteractability(clonedIcon);
+
 
   $('#main-canvas .tpd-content-wrapper').css({'display': 'none'});
 
@@ -220,6 +223,11 @@ function deselectIcon(icon){
 $('#saveSubmit').click(function(){saveSubmit();});
 
 function saveSubmit(){
+
+      // Loading... on Submit button
+      saveSubmit
+      $('#saveSubmit').text('Loading...');
+
       // removes any selection styling
       $('.selected').removeClass('selected');
 
@@ -242,14 +250,16 @@ function saveSubmit(){
             console.log(ajax.responseText);
 
             var imageLink = "http://test.kaitlynjoy.com/drag-drop/" + ajax.responseText;
+
+            $('#user-design-thanks').attr('src', imageLink);
+
+            $('#submitScreen').fadeToggle('slow');
+
       			// execute any code placed here once ajax save is complete
             $.post("send-email.php", {firstParam : imageLink}, function(data) {
               //this is your response data from serv
               console.log(data);
 
-              $('#user-design-thanks').attr('src', imageLink);
-
-              $('#submitScreen').fadeToggle('slow');
             });
 
           }
