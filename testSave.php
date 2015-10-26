@@ -20,6 +20,7 @@ if (isset($GLOBALS["HTTP_RAW_POST_DATA"]))
   $fp = fopen( $fileName , 'wb' );
   fwrite( $fp, $unencodedData);
   fclose( $fp );
+  echo $fileName;
 
 }
 ?>

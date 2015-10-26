@@ -239,7 +239,19 @@ function saveSubmit(){
       ajax.onreadystatechange=function(){
       		if (ajax.readyState == 4)
       		{
+            console.log(ajax.responseText);
+
+            var imageLink = "http://test.kaitlynjoy.com/drag-drop/" + ajax.responseText;
       			// execute any code placed here once ajax save is complete
+            $.post("send-email.php", {firstParam : imageLink}, function(data) {
+              //this is your response data from serv
+              console.log(data);
+
+              $('#user-design-thanks').attr('src', imageLink);
+
+              $('#submitScreen').fadeToggle('slow');
+            });
+
           }
   	}
 

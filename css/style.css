@@ -220,3 +220,26 @@ a {
   display: none !important;
   visible: hidden !important;
 }
+
+h1 {
+  font-size: 3em;
+  text-align: center;
+}
+
+#submitScreen {
+  z-index: 999;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(37, 46, 53, .98);
+}
+
+img.user-design{
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
