@@ -4,38 +4,7 @@
 // Line Break in title: \n
 
 var choose = [['choose-arrow.png', 'Choose a Category']];
-var trees = [
-              ['trees-american-linden.png', 'American Linden\n\nGreat Shade\nFlowers make best-in-the-world honey'],
-              ['trees-cottonwood.png', 'Cottonwood\n\nWildlife Den Sites\nGreat for bird nests'],
-              ['trees-golden-willow.png', 'Golden Willow\n\nAttractive and Functional Shade\nDense Animal Cover'],
-              ['trees-maple.png', 'Silver Maple\n\nUsed by deer and rabbits\nGood Wind Protection'],
-              ['trees-paper-birch.png', 'Paper Birch\n\nUsed as food for 30 types of animals'],
-              ['trees-pine.png', 'Pine\n\nValued for ornamental landscaping\nNesting for Morning Doves']
-            ];
-var flowers = [
-                ['flowers-blue-eyed-grass.png', 'Blue Eyed Grass\n\nPart of the iris family\nBlooms late spring to early summer'],
-                ['flowers-hyssop.png', 'Giant Hyssop\n\nProvides nectar to pollinators\nMember of the mint family'],
-                ['flowers-marsh-marigold.png', 'Marsh Marigold\n\nProvides habitat for phytoplankton\nNectar source for butterflies'],
-                ['flowers-milkweed.png', 'Butterfly Milkweed\n\nAttracts monarch butterflies and humingbirds\nNative Americans used milkweed to make cloth'],
-                ['flowers-prairie-violet.png', 'Prairie Violet\n\nAttracts bees and other beneficial insects\nNo noticeable floral scent'],
-                ['flowers-wild-prairie-rose.png', 'Wild Prairie Rose\n\nWere used for medicine and food by native americans\nThe petals and rose hips are full of nutrients']
-              ];
-var bushes = [
-              ['bushes-arborvitae.png', 'Arborvitae\n\nGood for cover, nesting and food for animals\nPrefers moist soils'],
-              ['bushes-buckthorn.png', 'Buckthorn\n\nVery attractive silvery-green foliage\nOrange fruit persists throughout winter'],
-              ['bushes-burning-bush.png', 'Burning Bush\n\nScientific name is Latin for "winged"'],
-              ['bushes-dogwood.png', 'Dogwood\n\nStabilizes soil\nAbsorbs large quantities of water'],
-              ['bushes-flame-amur-maple.png', 'Flame Amur Maple\n\nSeeds eaten by squirrels\nNative maples used for sugary sap'],
-              ['bushes-suffruticosa.png', 'Suffruticosa\n\nBelongs to the peony family\nWoody stems allow the plant to survive the winter']
-            ];
-var grasses = [
-                ['grasses-big-bluestem.png', 'Big Bluestem\n\nFilters water contaminants\nHigh quality forage for wildlife'],
-                ['grasses-cattail.png', 'Cattail\n\nUsed for food/medicines by Native Americans\nHelps maintain marsh habitats'],
-                ['grasses-fox-sedge.png', 'Fox Sedge\n\nFilters water contaminants\nSpreads out rapidly'],
-                ['grasses-horsetail.png', 'Horsetail\n\nFilters contaminants in water\nProvides habitat for aquatic animals'],
-                ['grasses-indian-grass.png', 'Indiangrass\n\nBlooms in late spring\nRegrows quickly after wildfires'],
-                ['grasses-little-bluegrass.png', 'Little Bluegrass\n\nHardy plant that likes hills, ridges, and slopes\nVery resistant to droughts']
-              ];
+
 var dryPlants=[
                 ['trees-american-linden.png', 'American Linden\n\nGreat Shade\nFlowers make best-in-the-world honey'],
                 ['trees-maple.png', 'Silver Maple\n\nUsed by deer and rabbits\nGood Wind Protection'],
@@ -64,6 +33,46 @@ var wetPlants=[
                 ['grasses-horsetail.png', 'Horsetail\n\nFilters contaminants in water\nProvides habitat for aquatic animals'],
                 ['bushes-dogwood.png', 'Dogwood\n\nStabilizes soil\nAbsorbs large quantities of water']
               ];
+var wetTrees=[
+                ['trees-cottonwood.png', 'Cottonwood\n\nWildlife Den Sites\nGreat for bird nests'],
+                ['trees-golden-willow.png', 'Golden Willow\n\nAttractive and Functional Shade\nDense Animal Cover'],
+                ['trees-paper-birch.png', 'Paper Birch\n\nUsed as food for 30 types of animals']
+              ];
+var wetFlowers=[
+                ['flowers-marsh-marigold.png', 'Marsh Marigold\n\nProvides habitat for phytoplankton\nNectar source for butterflies']
+              ];
+var wetGrasses=[
+                ['grasses-big-bluestem.png', 'Big Bluestem\n\nFilters water contaminants\nHigh quality forage for wildlife'],
+                ['grasses-cattail.png', 'Cattail\n\nUsed for food/medicines by Native Americans\nHelps maintain marsh habitats'],
+                ['grasses-fox-sedge.png', 'Fox Sedge\n\nFilters water contaminants\nSpreads out rapidly'],
+                ['grasses-horsetail.png', 'Horsetail\n\nFilters contaminants in water\nProvides habitat for aquatic animals']
+              ];
+var wetBushes=[
+                ['bushes-dogwood.png', 'Dogwood\n\nStabilizes soil\nAbsorbs large quantities of water']
+              ];
+var dryTrees=[
+              ['trees-american-linden.png', 'American Linden\n\nGreat Shade\nFlowers make best-in-the-world honey'],
+              ['trees-maple.png', 'Silver Maple\n\nUsed by deer and rabbits\nGood Wind Protection'],
+              ['trees-pine.png', 'Pine\n\nValued for ornamental landscaping\nNesting for Morning Doves']
+            ];
+var dryBushes=[
+              ['bushes-arborvitae.png', 'Arborvitae\n\nGood for cover, nesting and food for animals\nPrefers moist soils'],
+              ['bushes-buckthorn.png', 'Buckthorn\n\nVery attractive silvery-green foliage\nOrange fruit persists throughout winter'],
+              ['bushes-burning-bush.png', 'Burning Bush\n\nScientific name is Latin for "winged"'],
+              ['bushes-flame-amur-maple.png', 'Flame Amur Maple\n\nSeeds eaten by squirrels\nNative maples used for sugary sap'],
+              ['bushes-suffruticosa.png', 'Suffruticosa\n\nBelongs to the peony family\nWoody stems allow the plant to survive the winter']
+            ];
+var dryGrasses=[
+              ['grasses-little-bluegrass.png', 'Little Bluegrass\n\nHardy plant that likes hills, ridges, and slopes\nVery resistant to droughts'],
+              ['grasses-indian-grass.png', 'Indiangrass\n\nBlooms in late spring\nRegrows quickly after wildfires']
+            ];
+var dryFlowers=[
+              ['flowers-blue-eyed-grass.png', 'Blue Eyed Grass\n\nPart of the iris family\nBlooms late spring to early summer'],
+              ['flowers-hyssop.png', 'Giant Hyssop\n\nProvides nectar to pollinators\nMember of the mint family'],
+              ['flowers-milkweed.png', 'Butterfly Milkweed\n\nAttracts monarch butterflies and humingbirds\nNative Americans used milkweed to make cloth'],
+              ['flowers-prairie-violet.png', 'Prairie Violet\n\nAttracts bees and other beneficial insects\nNo noticeable floral scent'],
+              ['flowers-wild-prairie-rose.png', 'Wild Prairie Rose\n\nWere used for medicine and food by native americans\nThe petals and rose hips are full of nutrients']
+            ];
 
 
 
@@ -158,7 +167,7 @@ function cloneSidebarIcon(event){
 function addFinalIcon(event){
   var offsetx = $(event.target).offset();
   var clonedIcon = event.target.cloneNode(true);
-  $(clonedIcon).css({"transform": "translate(0, 0)", "width" : "100px", "height" : "100px", "position": "absolute", "top" : offsetx.top +10, "left":offsetx.left +10, 'z-index':zIndex});
+  $(clonedIcon).css({"transform": "translate(0, 0)", "width" : "80px", "height" : "80px", "position": "absolute", "top" : offsetx.top +10, "left":offsetx.left +10, 'z-index':zIndex});
   zIndex += 1;
 
   removeModifyability();
@@ -267,7 +276,7 @@ function removeModifyability(){
 
 function scaleUp(icon){
   var width = $(icon).width();
-  if(width < 200) {
+  if(width < 130) {
     width += 25;
     $(icon).css({'width': width + 'px', 'height':width + 'px'});
   }
@@ -275,7 +284,7 @@ function scaleUp(icon){
 
 function scaleDown(icon){
   var width = $(icon).width();
-  if(width > 50) {
+  if(width > 30) {
     width -= 25;
     $(icon).css({'width': width + 'px', 'height':width + 'px'});
   }
