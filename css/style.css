@@ -134,12 +134,14 @@ a {
   width: 20%;
   float: right;
   background-color: #fff;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: auto;
 }
 
 #sidebar img {
   width: 36%;
   padding: 15px 7%;
+  z-index: 500;
 }
 
 #sidebar img:hover, #main-canvas img:hover {
