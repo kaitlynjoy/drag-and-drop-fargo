@@ -39,7 +39,8 @@ var wetTrees=[
                 ['trees-paper-birch.png', 'Paper Birch\n\nUsed as food for 30 types of animals']
               ];
 var wetFlowers=[
-                ['flowers-marsh-marigold.png', 'Marsh Marigold\n\nProvides habitat for phytoplankton\nNectar source for butterflies']
+                ['flowers-marsh-marigold.png', 'Marsh Marigold\n\nProvides habitat for phytoplankton\nNectar source for butterflies'],
+                ['flowers-cardinal-flowers.png', 'Cardinal Flower\nAttract beneficial insects and butterflies\nBears spikes of brilliant, scarlet-red flowers']
               ];
 var wetGrasses=[
                 ['grasses-big-bluestem.png', 'Big Bluestem\n\nFilters water contaminants\nHigh quality forage for wildlife'],
@@ -48,7 +49,8 @@ var wetGrasses=[
                 ['grasses-horsetail.png', 'Horsetail\n\nFilters contaminants in water\nProvides habitat for aquatic animals']
               ];
 var wetBushes=[
-                ['bushes-dogwood.png', 'Dogwood\n\nStabilizes soil\nAbsorbs large quantities of water']
+                ['bushes-dogwood.png', 'Dogwood\n\nStabilizes soil\nAbsorbs large quantities of water'],
+                ['bushes-black-chokeberry.png', 'Black Chokeberry\n\nFlowers in Spring\nTolerant in most conditions']
               ];
 var dryTrees=[
               ['trees-american-linden.png', 'American Linden\n\nGreat Shade\nFlowers make best-in-the-world honey'],
@@ -347,7 +349,7 @@ function saveSubmit(){
       		{
             console.log(ajax.responseText);
 
-            var imageLink = "http://test.kaitlynjoy.com/drag-drop/" + ajax.responseText;
+            var imageLink = "http://gcom468.samszczesny.com/design-the-park/" + ajax.responseText;
 
             $('#user-design-thanks').attr('src', imageLink);
 
