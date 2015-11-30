@@ -148,7 +148,6 @@ function displayIcons(){
     iconContainer.append("<img src='img/" + iconArray[i][0] + "' title='" + iconArray[i][1] + "' />");
   }
   addSidebarInteraction();
-  //Tipped.create('#sidebar img');
 }
 
 
@@ -325,7 +324,6 @@ $('#saveSubmit').click(function(){saveSubmit();});
 function saveSubmit(){
 
       // Loading... on Submit button
-      saveSubmit
       $('#saveSubmit').text('Loading...');
 
       // removes any selection styling
@@ -338,18 +336,17 @@ function saveSubmit(){
       // Turns the canvas into a base64 png
       finalImage = finalCanvas.toDataURL("image/png");
 
-      // saves image into submitted-images folder using testSave.php
+      // saves image into submitted-images folder using savePark.php
       var ajax = new XMLHttpRequest();
-      ajax.open("POST",'testSave.php',true);
+      ajax.open("POST",'savePark.php',true);
       ajax.setRequestHeader('Content-Type', 'canvas/upload');
       ajax.send(finalImage);
 
       ajax.onreadystatechange=function(){
       		if (ajax.readyState == 4)
       		{
-            console.log(ajax.responseText);
 
-            var imageLink = "http://gcom468.samszczesny.com/design-the-park/" + ajax.responseText;
+            var imageLink = "http://www.thefargoproject.com/design-a-space/" + ajax.responseText;
 
             $('#user-design-thanks').attr('src', imageLink);
 

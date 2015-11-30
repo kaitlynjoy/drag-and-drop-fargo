@@ -2,7 +2,7 @@
 
 $imageLink = $_POST['firstParam'];
 
-$to = "mannka@mnstate.edu";
+$to = "planning@cityoffargo.com";
 $subject = "Submission From the Fargo Project: Design Your Park";
 $message = '
 <html>
@@ -26,7 +26,7 @@ $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 // More headers
-$headers .= 'From: <mannka@mnstate.edu>' . "\r\n";
+$headers .= 'From: <planning@cityoffargo.com>' . "\r\n";
 
 mail($to,$subject,$message,$headers);
 
